@@ -1,5 +1,8 @@
 package colletions;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import colletions.models.CarrinhoCompra;
 
 public class CarrinhoCompraApplication {
@@ -24,9 +27,19 @@ public class CarrinhoCompraApplication {
 		carrinhoCompra.exibirItens();
 		System.out.println();
 		
+		System.out.println("Ordenando itens por preço");
+		System.out.println(carrinhoCompra.ordenarPorPreco());
+		System.out.println();
+		
+		System.out.println("Ordenando itens por quantidade");
+		System.out.println(carrinhoCompra.ordenarPorQuantidade());
+		System.out.println();
+		
 		System.out.println("Removendo itens");
 		carrinhoCompra.removerItem("Arroz");
 		System.out.println("Valor total do carrinho: R$ " + String.format("%.2f", carrinhoCompra.calcularValorTotal()));
+		
+		
 		
 	}
 

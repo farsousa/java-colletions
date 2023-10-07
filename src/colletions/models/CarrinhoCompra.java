@@ -1,6 +1,7 @@
 package colletions.models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CarrinhoCompra {
@@ -35,6 +36,22 @@ public class CarrinhoCompra {
 	
 	public void exibirItens() {
 		System.out.println(this.itens);
+	}
+	
+	public List<Item> ordenarPorPreco() {
+		List<Item> listaCarrinhoCompraOrdenadoPorPreco = new ArrayList<>(this.itens);
+		if(!this.itens.isEmpty()) {
+			Collections.sort(listaCarrinhoCompraOrdenadoPorPreco);
+		}
+		return listaCarrinhoCompraOrdenadoPorPreco;		
+	}
+	
+	public List<Item> ordenarPorQuantidade() {
+		List<Item> listaCarrinhoCompraOrdenadoPorQuantidade = new ArrayList<>(this.itens);
+		if(!this.itens.isEmpty()) {
+			Collections.sort(listaCarrinhoCompraOrdenadoPorQuantidade, new ComparatorPorQuantidade());
+		}
+		return listaCarrinhoCompraOrdenadoPorQuantidade;		
 	}
 
 }
