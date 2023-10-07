@@ -1,4 +1,4 @@
-package com.farsousa.colletions;
+package colletions;
 
 public class CollectionsApplication {
 	
